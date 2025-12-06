@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInFromBottom 0.8s ease-out forwards;
+  opacity: 0;
+  /* Start invisible */
+}
+
+/* Delay animations */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* tailwind.css  (or global.css) */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add more as needed */
+
+:root {
+  --brand-blue: #051d3e;
+  /* pick any blue you like */
+  --brand-blue-dark: #1a4c9d;
+  --brand-green: #e1ece8;
+  --brand-green-dark: #e7f3ef;
+}
+
+/* reusable gradient class (works even if you delete tailwind.config colours) */
+.bg-hero-gradient {
+  background: radial-gradient(ellipse,
+      /* #031938 0%, */
+      rgba(3, 28, 65, 0.4) 0%,
+      var(--brand-blue) 0%);
+  animation: pulse-ring 3s infinite ease-in-out;
+}
+
+/* 
+@keyframes pulse-ring {
+  0% {
+    filter: blur(0px);
+  }
+
+  50% {
+    filter: blur(8px);
+  }
+
+  100% {
+    filter: blur(0px);
+  }
+} */
+
+html.light {
+  @apply bg-gray-100;
+}
+
+html.dark {
+  @apply bg-[#0a0f1b];
+}
+
+/* brand-green utilities (if you still want them) */
+.bg-brand-green {
+  background-color: var(--brand-green);
+}
+
+.bg-brand-green-dark {
+  background-color: var(--brand-green-dark);
+}
+
+/* optional: fade-in keyframes if you kept the animate-fade-in-up class */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up .8s ease-out both;
+}
+
+.delay-200 {
+  animation-delay: .2s;
+}
+
+.delay-400 {
+  animation-delay: .4s;
+}
