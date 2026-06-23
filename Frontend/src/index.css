@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@theme {
+  --variant-dark: .dark &;
+}
+
+
+/* Force pure white for light mode and pure black for dark mode */
+:root {
+  --app-bg: #ffffff;
+  --app-text: #111827;
+}
+
+html.dark {
+  --app-bg: #030711;
+  --app-text: #f9fafb;
+}
+
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--app-bg) !important;
+  color: var(--app-text) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInFromBottom 0.8s ease-out forwards;
+  opacity: 0;
+  /* Start invisible */
+}
+
+/* Delay animations */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* tailwind.css  (or global.css) */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add more as needed */
+
+:root {
+  --brand-blue: #051d3e;
+  /* pick any blue you like */
+  --brand-blue-dark: #1a4c9d;
+  --brand-green: #e1ece8;
+  --brand-green-dark: #e7f3ef;
+}
+
+/* reusable gradient class (works even if you delete tailwind.config colours) */
+.bg-hero-gradient {
+  background: radial-gradient(ellipse,
+      #031938 0%,
+      rgba(3, 28, 65, 0.4) 0%,
+      var(--brand-blue) 0%);
+  animation : pulse-ring 3s infinite ease-in-out;
+}
+
+/* Transitions already covered above, but kept for specificity if needed */
+
+
+/* Smooth transitions for a premium feel */
+* {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* brand-green utilities (if you still want them) */
+.bg-brand-green {
+  background-color: var(--brand-green);
+}
+
+.bg-brand-green-dark {
+  background-color: var(--brand-green-dark);
+}
+
+/* optional: fade-in keyframes if you kept the animate-fade-in-up class */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up .8s ease-out both;
+}
+
+.delay-200 {
+  animation-delay: .2s;
+}
+
+.delay-400 {
+  animation-delay: .4s;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+/* ── Founder / Investor Dashboard: always dark navy regardless of theme ── */
+.founder-dashboard,
+.founder-dashboard * {
+  /* Let components control their own background */
+}
+
+.founder-dashboard {
+  background: radial-gradient(ellipse at 60% 30%, rgba(18,55,140,0.35) 0%, transparent 55%),
+              linear-gradient(160deg, #030918 0%, #050f22 50%, #040c1e 100%) !important;
+  min-height: 100vh;
+}
+
+/* Hide scrollbar for investor carousels */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
